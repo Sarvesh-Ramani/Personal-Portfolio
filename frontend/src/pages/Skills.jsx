@@ -9,13 +9,32 @@ import { LoadingPage } from "../components/LoadingSpinner";
 const Skills = () => {
   const [skillsData, setSkillsData] = useState({});
   const [loading, setLoading] = useState(true);
+  const [selectedSkill, setSelectedSkill] = useState(null);
+  const [skillsUnlocked, setSkillsUnlocked] = useState(0);
+  const [totalXP, setTotalXP] = useState(0);
 
   const fetchSkills = async () => {
     try {
       setLoading(true);
-      // Simulate API call delay for smooth UX
-      await new Promise(resolve => setTimeout(resolve, 600));
-      setSkillsData(skills);
+      const skillsArray = await skillsApi.getAll();
+      
+      // Transform skills data to grouped format
+      const grouped = {};
+      skillsArray.forEach(skill => {
+        if (!grouped[skill.category]) {
+          grouped[skill.category] = [];
+        }
+        grouped[skill.category].push(skill);
+      });
+      
+      setSkillsData(grouped);
+      
+      // Calculate gamification metrics
+      const unlockedCount = skillsArray.filter(s => s.level >= 70).length;
+      const xpTotal = skillsArray.reduce((sum, skill) => sum + skill.level, 0);
+      setSkillsUnlocked(unlockedCount);
+      setTotalXP(xpTotal);
+      
     } catch (err) {
       console.error('Error fetching skills:', err);
     } finally {
