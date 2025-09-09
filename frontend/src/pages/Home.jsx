@@ -83,12 +83,34 @@ const Home = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      // Simulate API call delay for smooth UX
-      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      // Get stored visit count and increment
+      const currentVisitCount = parseInt(localStorage.getItem('portfolioVisitCount') || '0');
+      const newVisitCount = currentVisitCount + 1;
+      setVisitCount(newVisitCount);
+      localStorage.setItem('portfolioVisitCount', newVisitCount.toString());
+      
+      // Fetch data from API
+      const [personalInfo, projects, skills] = await Promise.all([
+        personalInfoApi.get(),
+        projectsApi.getFeatured(),
+        skillsApi.getAll()
+      ]);
       
       setPersonalData(personalInfo);
-      setFeaturedProjects(projects.featured);
+      setFeaturedProjects(projects);
+      setSkillsData(skills);
       setTechStackData(techStack);
+      
+      // Calculate portfolio progress based on data completeness
+      let progress = 0;
+      if (personalInfo) progress += 25;
+      if (projects.length > 0) progress += 25;
+      if (skills.length > 0) progress += 25;
+      if (techStack.length > 0) progress += 25;
+      
+      setPortfolioProgress(progress);
+      setIsPortfolioUnlocked(progress === 100);
       
     } catch (err) {
       console.error('Error loading data:', err);
