@@ -287,8 +287,7 @@ export const educationApi = {
 export const achievementsApi = {
   getAll: async () => {
     if (isProductionFrontendOnly) {
-      // Import achievements data from mock.js for frontend-only deployment
-      const { achievements } = await import('../mock.js');
+      // Return mock achievements data for frontend-only deployment
       return new Promise((resolve) => {
         setTimeout(() => resolve(achievements), 130);
       });
