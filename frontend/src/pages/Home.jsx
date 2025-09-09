@@ -23,32 +23,24 @@ const Home = () => {
       icon: <Code className="h-6 w-6" />,
       title: "Backend Engineering",
       description: "2+ years building scalable microservices with Java & Spring Boot",
-      metric: "50+ APIs Built",
-      level: 95,
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: <Database className="h-6 w-6" />,
       title: "API Architecture",
       description: "Expert in designing secure REST APIs and enterprise database systems",
-      metric: "95% Uptime",
-      level: 90,
       color: "from-green-500 to-green-600"
     },
     {
       icon: <Cloud className="h-6 w-6" />,
       title: "Enterprise Solutions",
       description: "Delivered production-grade solutions for enterprise clients",
-      metric: "100% Success Rate",
-      level: 92,
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: <Brain className="h-6 w-6" />,
       title: "AI/ML Research",
       description: "Published research in deep learning and astronomical data science",
-      metric: "95%+ Accuracy",
-      level: 85,
       color: "from-orange-500 to-orange-600"
     }
   ];
