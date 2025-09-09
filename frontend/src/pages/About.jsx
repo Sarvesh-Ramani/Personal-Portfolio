@@ -40,7 +40,7 @@ const About = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 transition-colors duration-200">
             About Me
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto transition-colors duration-200">
             A passionate backend developer with a unique journey from mechanical engineering to software development, 
             driven by curiosity and a love for solving complex problems.
           </p>
