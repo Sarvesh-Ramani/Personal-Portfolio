@@ -15,7 +15,7 @@ const API_BASE = isProductionFrontendOnly ? null : `${BACKEND_URL}/api`;
 
 
 // Create axios instance with default config (only if backend is available)
-const api = !isProductionFrontendOnly ? axios.create({
+const api = (!isProductionFrontendOnly && API_BASE) ? axios.create({
   baseURL: API_BASE,
   timeout: 10000,
   headers: {
