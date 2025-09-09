@@ -29,7 +29,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Location",
-      value: "Coimbatore, Tamil Nadu, India",
+      value: "Chennai, Tamil Nadu, India",
       action: null,
       actionText: null
     }
