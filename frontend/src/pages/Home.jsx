@@ -303,9 +303,9 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {highlights.map((highlight, index) => (
-              <Card key={index} className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 mx-auto shadow-sm group-hover:scale-110 transition-transform duration-300">
+              <Card key={index} className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer relative overflow-hidden">
+                <CardContent className="p-8 text-center space-y-4 relative z-10">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${highlight.color} rounded-xl flex items-center justify-center text-white mx-auto shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                     {highlight.icon}
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white transition-colors duration-300">
@@ -314,10 +314,35 @@ const Home = () => {
                   <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed transition-colors duration-300">
                     {highlight.description}
                   </p>
-                  <div className="text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full">
+                  
+                  {/* Interactive Skill Level */}
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="text-slate-500 dark:text-slate-400">Expertise Level</span>
+                      <span className="text-slate-700 dark:text-slate-300 font-semibold">{highlight.level}%</span>
+                    </div>
+                    <div className="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-2">
+                      <div 
+                        className={`bg-gradient-to-r ${highlight.color} h-2 rounded-full transition-all duration-1000 ease-out group-hover:animate-pulse`}
+                        style={{ width: `${highlight.level}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                  
+                  <div className="text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors duration-300">
                     {highlight.metric}
                   </div>
                 </CardContent>
+                
+                {/* Hover Effect Background */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${highlight.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                
+                {/* Achievement Badge */}
+                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-yellow-800 text-xs">
+                    <Award className="h-3 w-3" />
+                  </div>
+                </div>
               </Card>
             ))}
           </div>
