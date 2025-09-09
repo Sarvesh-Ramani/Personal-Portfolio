@@ -200,41 +200,7 @@ const Home = () => {
                 ))}
               </div>
 
-              {/* Portfolio Progress */}
-              {portfolioProgress > 0 && (
-                <div className="mt-6 p-4 bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200/30 dark:border-blue-700/30">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                      Portfolio Exploration
-                    </span>
-                    <span className="text-sm text-blue-600 dark:text-blue-400 font-semibold">
-                      {portfolioProgress}%
-                    </span>
-                  </div>
-                  <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                    <div 
-                      className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${portfolioProgress}%` }}
-                    ></div>
-                  </div>
-                  {isPortfolioUnlocked && (
-                    <div className="flex items-center mt-2 text-green-600 dark:text-green-400 text-sm">
-                      <Sparkles className="h-4 w-4 mr-1" />
-                      <span>Portfolio fully explored! 🎉</span>
-                    </div>
-                  )}
-                </div>
-              )}
 
-              {/* Visit Counter (Easter Egg) */}
-              {visitCount > 1 && (
-                <div className="mt-4 text-center">
-                  <Badge className="bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900/30 dark:to-purple-900/30 text-pink-600 dark:text-pink-400 border-pink-200 dark:border-pink-700 text-xs px-3 py-1">
-                    <Star className="h-3 w-3 mr-1" />
-                    Welcome back! Visit #{visitCount}
-                  </Badge>
-                </div>
-              )}
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/projects">
