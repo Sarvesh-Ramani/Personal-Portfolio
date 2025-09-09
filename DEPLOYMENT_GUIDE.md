@@ -1,13 +1,16 @@
 # Deployment Guide for Sarvesh's Portfolio
 
-## 🚀 Fixed Netlify Deployment Issues
+## 🛠 Fixed Node.js Compatibility Issue
 
-The original deployment errors have been resolved. Here's what was fixed:
+**Latest Issue Resolved:**
+- ✅ **Node.js Version**: Updated from Node.js 18 to Node.js 20
+- ✅ **React Router DOM v7**: Requires Node.js 20+ (was causing build failures)
+- ✅ **Multiple Configs**: Added `.nvmrc` files and updated `netlify.toml`
 
-### Issues Resolved:
+### Issues Fixed:
 1. **Path Error**: Fixed `frontend/frontend/build` to correct `build` path
 2. **Build Command**: Updated to include dependency installation
-3. **Node Version**: Specified Node.js 18 for compatibility
+3. **Node Version**: **UPDATED to Node.js 20** (React Router DOM v7 requirement)
 4. **Redirects**: Added both netlify.toml and _redirects file for redundancy
 
 ## 📋 Deployment Options
