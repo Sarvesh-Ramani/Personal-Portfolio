@@ -1,0 +1,41 @@
+{
+  "name": "sarvesh-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Sarvesh Ramani - Software Engineer II",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
+    "build": "npm run frontend:build && npm run backend:build",
+    "start": "npm run backend:start",
+    "frontend:dev": "cd frontend && npm start",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:install": "cd frontend && npm install",
+    "backend:dev": "cd backend && python -m uvicorn server:app --host 0.0.0.0 --port 8001 --reload",
+    "backend:start": "cd backend && python -m uvicorn server:app --host 0.0.0.0 --port 8001",
+    "backend:build": "cd backend && pip install -r requirements.txt",
+    "backend:install": "cd backend && pip install -r requirements.txt",
+    "install:all": "npm run frontend:install && npm run backend:install",
+    "seed": "cd backend && python seed_data.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sarveshramani/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "fastapi",
+    "mongodb",
+    "backend-developer",
+    "fullstack"
+  ],
+  "author": "Sarvesh Ramani <sarveshramani1004@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.9.0"
+  }
+}
