@@ -1,4 +1,4 @@
-# 🚀 Netlify Deployment Checklist - FIXED
+# 🚀 Netlify Deployment Checklist - ALL ISSUES FIXED
 
 ## ✅ All Issues Resolved
 
@@ -7,6 +7,20 @@
 2. **Node.js Version**: 18 → 20 (React Router DOM v7 requirement) ✅  
 3. **Build Command**: Added dependency installation ✅
 4. **Missing Configs**: Added .nvmrc files ✅
+5. **Dependency Conflicts**: Fixed date-fns version conflict ✅
+6. **Peer Dependencies**: Added --legacy-peer-deps flag ✅
+
+## 🛠 Latest Fix - Dependency Conflicts:
+
+**Problem:** 
+- `react-day-picker@8.10.1` required `date-fns@^2.28.0 || ^3.0.0`
+- Project had `date-fns@^4.1.0` 
+- Caused ERESOLVE dependency conflict
+
+**Solution:**
+- ✅ Downgraded `date-fns` from v4.1.0 → v3.6.0
+- ✅ Added `--legacy-peer-deps` flag to build command
+- ✅ Created `.npmrc` with `legacy-peer-deps=true`
 
 ## 📋 Ready to Deploy Steps:
 
