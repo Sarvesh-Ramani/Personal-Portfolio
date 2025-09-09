@@ -225,7 +225,7 @@ const Contact = () => {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-600 dark:text-slate-300 transition-colors duration-300">Location</span>
-                  <span className="font-medium text-slate-900 dark:text-white transition-colors duration-300">Coimbatore, India</span>
+                  <span className="font-medium text-slate-900 dark:text-white transition-colors duration-300">Chennai, India</span>
                 </div>
               </CardContent>
             </Card>
