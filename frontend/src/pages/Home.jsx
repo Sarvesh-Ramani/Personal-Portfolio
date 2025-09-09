@@ -101,7 +101,7 @@ const Home = () => {
       <section className="py-20 bg-white dark:bg-slate-800 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4 transition-colors duration-200">
               What I Bring to the Table
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
