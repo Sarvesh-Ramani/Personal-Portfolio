@@ -8,13 +8,7 @@ const isProductionFrontendOnly = !BACKEND_URL || BACKEND_URL.trim() === '';
 
 const API_BASE = isProductionFrontendOnly ? null : `${BACKEND_URL}/api`;
 
-// Debug logging for production troubleshooting
-console.log('🔍 API Service Debug:', {
-  BACKEND_URL,
-  isProductionFrontendOnly,
-  API_BASE,
-  NODE_ENV: process.env.NODE_ENV
-});
+
 
 // Create axios instance with default config (only if backend is available)
 const api = !isProductionFrontendOnly ? axios.create({
