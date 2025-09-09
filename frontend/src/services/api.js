@@ -1,39 +1,45 @@
 import axios from 'axios';
+import { personalInfo, skills, projects } from '../mock.js';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API_BASE = `${BACKEND_URL}/api`;
 
-// Create axios instance with default config
-const api = axios.create({
+// Check if we're in a frontend-only deployment (Netlify)
+const isProductionFrontendOnly = !BACKEND_URL || BACKEND_URL.includes('netlify');
+
+// Create axios instance with default config (only if backend is available)
+const api = !isProductionFrontendOnly ? axios.create({
   baseURL: API_BASE,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
-});
+}) : null;
 
-// Add request interceptor for logging
-api.interceptors.request.use(
-  (config) => {
-    console.log(`Making ${config.method?.toUpperCase()} request to ${config.url}`);
-    return config;
-  },
-  (error) => {
-    console.error('Request error:', error);
-    return Promise.reject(error);
-  }
-);
+// Add request interceptor for logging (only if backend is available)
+if (api) {
+  api.interceptors.request.use(
+    (config) => {
+      console.log(`Making ${config.method?.toUpperCase()} request to ${config.url}`);
+      return config;
+    },
+    (error) => {
+      console.error('Request error:', error);
+      return Promise.reject(error);
+    }
+  );
 
-// Add response interceptor for error handling
-api.interceptors.response.use(
-  (response) => {
-    return response;
-  },
-  (error) => {
-    console.error('API Error:', error.response?.data || error.message);
-    return Promise.reject(error);
-  }
-);
+  // Add response interceptor for error handling
+  api.interceptors.response.use(
+    (response) => {
+      return response;
+    },
+    (error) => {
+      console.error('API Error:', error.response?.data || error.message);
+      return Promise.reject(error);
+    }
+  );
+}
 
 // Personal Information API
 export const personalInfoApi = {
