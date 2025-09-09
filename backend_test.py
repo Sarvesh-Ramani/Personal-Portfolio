@@ -500,27 +500,33 @@ class PortfolioAPITester:
         print("🌐 Testing CORS Configuration...")
         
         try:
-            # Make a request and check for CORS headers
-            async with self.session.get(f"{BACKEND_URL}/") as response:
-                headers = response.headers
+            # Make a request with Origin header to trigger CORS
+            headers = {'Origin': 'https://example.com'}
+            async with self.session.get(f"{BACKEND_URL}/", headers=headers) as response:
+                response_headers = response.headers
+                
+                # Debug: print all headers
+                print(f"    Debug - All response headers:")
+                for name, value in response_headers.items():
+                    print(f"      {name}: {value}")
                 
                 # Check for CORS headers (case insensitive)
-                cors_headers_present = any(
-                    'access-control-allow-origin' in header.lower() 
-                    for header in headers.keys()
-                )
+                cors_headers_found = []
+                for header_name in response_headers.keys():
+                    if 'access-control' in header_name.lower():
+                        cors_headers_found.append(f"{header_name}: {response_headers[header_name]}")
                 
-                if cors_headers_present:
+                if cors_headers_found:
                     self.log_test_result(
                         "CORS Headers", 
                         True, 
-                        "CORS headers are properly configured"
+                        f"CORS headers found: {', '.join(cors_headers_found)}"
                     )
                 else:
                     self.log_test_result(
                         "CORS Headers", 
                         False, 
-                        "CORS headers not found in response"
+                        "No CORS headers found in response"
                     )
                     
         except Exception as e:
