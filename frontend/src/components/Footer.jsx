@@ -56,7 +56,7 @@ const Footer = () => {
 
         <div className="border-t border-slate-700 dark:border-slate-800 mt-8 pt-8 text-center">
           <p className="text-slate-300 dark:text-slate-400">
-            © 2024 Sarvesh Ramani. All rights reserved.
+            © 2025 Sarvesh Ramani. All rights reserved.
           </p>
         </div>
       </div>
