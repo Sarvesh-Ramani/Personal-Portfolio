@@ -4,23 +4,60 @@ import { Badge } from "../components/ui/badge";
 import { Building, Calendar, MapPin, CheckCircle, ArrowRight, BookOpen } from "lucide-react";
 
 const Experience = () => {
-  const experience = {
-    company: "AppViewX",
-    role: "Backend Developer",
-    period: "2023 - Present",
-    location: "India",
-    type: "Full-time",
-    description: "Transitioned from core product development (SIGN+) to a SWAT engineering role resolving critical issues and improving client retention.",
-    achievements: [
-      "Developed secure REST APIs and modular backend components for SIGN+, enabling seamless digital signing workflows with identity providers and PKI systems",
-      "Resolved 50+ critical production issues as part of the SWAT team, with <24h turnaround and detailed root cause analysis",
-      "Delivered customer-specific enhancements and configuration fixes across AppViewX modules, improving satisfaction and retention",
-      "Collaborated directly with enterprise clients to gather feature requirements and implement tailored solutions",
-      "Designed and implemented microservices architecture for improved scalability and maintainability",
-      "Optimized database queries and improved system performance by 30%"
-    ],
-    technologies: ["Java", "Spring Boot", "MongoDB", "REST APIs", "Microservices", "PKI", "Docker", "Kubernetes"]
-  };
+  const experiences = [
+    {
+      company: "AppViewX",
+      role: "Software Engineer II", 
+      period: "Aug 2023 - Present",
+      duration: "2 yrs 2 mos",
+      location: "Coimbatore, Tamil Nadu, India",
+      type: "Full-time",
+      workType: "Hybrid",
+      description: "Working as Software Engineer II focusing on engineering and product development with expertise in backend systems and enterprise solutions.",
+      achievements: [
+        "Developing scalable backend services using Java and Spring Boot",
+        "Building secure REST APIs for enterprise PKI and digital signing workflows",
+        "Collaborating on product development initiatives and feature enhancements",
+        "Working with microservices architecture and containerized deployments",
+        "Contributing to code reviews and maintaining high code quality standards"
+      ],
+      technologies: ["Java", "Spring Boot", "MongoDB", "REST APIs", "Microservices", "PKI", "Docker", "Kubernetes"]
+    },
+    {
+      company: "AppViewX",
+      role: "Software Development Engineer - R&D Intern",
+      period: "Jan 2023 - Jul 2023", 
+      duration: "7 mos",
+      location: "Coimbatore, Tamil Nadu, India",
+      type: "Internship",
+      workType: "On-site",
+      description: "Started as R&D intern focusing on software development and research initiatives in backend technologies.",
+      achievements: [
+        "Developed foundational knowledge in enterprise software development",
+        "Worked on research and development projects using C++ and Python",
+        "Gained experience in backend system design and implementation",
+        "Contributed to proof-of-concept developments and technical documentation"
+      ],
+      technologies: ["C++", "Python", "Java", "Backend Development", "Research"]
+    },
+    {
+      company: "Spartificial",
+      role: "ML Research Intern",
+      period: "May 2024 - Sep 2024",
+      duration: "5 mos", 
+      location: "Remote",
+      type: "Internship",
+      workType: "Remote",
+      description: "Worked on ML research project focusing on GravitySpy Glitch Classification using Deep Learning techniques.",
+      achievements: [
+        "Designed and implemented deep learning models for gravitational wave glitch classification",
+        "Achieved 95%+ accuracy in glitch detection using CNNs",
+        "Processed large-scale LIGO astronomical datasets",
+        "Published research findings and contributed to astronomical data science"
+      ],
+      technologies: ["Python", "TensorFlow", "Deep Learning", "CNN", "Data Science", "Machine Learning"]
+    }
+  ];
 
   const responsibilities = [
     {
@@ -34,20 +71,20 @@ const Experience = () => {
     },
     {
       title: "Production Support",
-      description: "Part of SWAT team responsible for resolving critical production issues",
+      description: "Part of engineering team responsible for maintaining and enhancing production systems",
       tasks: [
-        "Investigate and resolve customer-reported issues within 24 hours",
-        "Perform root cause analysis and implement preventive measures",
-        "Maintain detailed documentation of issues and solutions"
+        "Monitor system performance and identify optimization opportunities",
+        "Implement bug fixes and feature enhancements",
+        "Collaborate with cross-functional teams for seamless deployments"
       ]
     },
     {
-      title: "Client Collaboration",
-      description: "Work directly with enterprise clients to understand and implement requirements",
+      title: "Research & Development",
+      description: "Contribute to R&D initiatives and explore emerging technologies",
       tasks: [
-        "Gather feature requirements from client stakeholders",
-        "Provide technical guidance and recommendations",
-        "Deliver custom solutions tailored to client needs"
+        "Research new technologies and frameworks for potential adoption",
+        "Develop proof-of-concepts for innovative solutions",
+        "Participate in technical discussions and architecture decisions"
       ]
     }
   ];
@@ -55,9 +92,9 @@ const Experience = () => {
   const education = {
     degree: "B.E Mechanical Engineering",
     institution: "Coimbatore Institute of Technology",
-    period: "June 2019 - May 2023",
-    location: "Coimbatore, India",
-    description: "Graduated with a strong foundation in engineering principles, problem-solving, and analytical thinking."
+    period: "Jul 2019 - 2023",
+    location: "Coimbatore, Tamil Nadu, India",
+    description: "Graduated with a strong foundation in engineering principles, problem-solving, and analytical thinking. Transitioned from mechanical engineering to software development during final year."
   };
 
   return (
@@ -65,90 +102,97 @@ const Experience = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 transition-colors duration-200">
             Professional Experience
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            My journey in backend development, from core product development to critical issue resolution.
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto transition-colors duration-200">
+            My journey in software development, from R&D internship to Software Engineer II, with focus on backend systems and AI/ML research.
           </p>
         </div>
 
-        {/* Current Role */}
-        <div className="mb-16">
-          <Card className="border-slate-200 shadow-lg">
-            <CardHeader className="bg-gradient-to-r from-blue-50 to-slate-50">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center text-white">
-                    <Building className="h-8 w-8" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-2xl text-slate-900 mb-2">{experience.role}</CardTitle>
-                    <p className="text-xl text-blue-600 font-semibold">{experience.company}</p>
-                    <div className="flex flex-wrap gap-4 mt-2 text-sm text-slate-600">
-                      <div className="flex items-center">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        {experience.period}
+        {/* Experience Cards */}
+        <div className="space-y-12 mb-16">
+          {experiences.map((experience, index) => (
+            <Card key={index} className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-lg transition-colors duration-200">
+              <CardHeader className="bg-gradient-to-r from-blue-50 to-slate-50 dark:from-blue-900/20 dark:to-slate-800 transition-colors duration-200">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-16 h-16 bg-blue-600 dark:bg-blue-500 rounded-lg flex items-center justify-center text-white">
+                      <Building className="h-8 w-8" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl text-slate-900 dark:text-white mb-2 transition-colors duration-200">{experience.role}</CardTitle>
+                      <p className="text-xl text-blue-600 dark:text-blue-400 font-semibold transition-colors duration-200">{experience.company}</p>
+                      <div className="flex flex-wrap gap-4 mt-2 text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">
+                        <div className="flex items-center">
+                          <Calendar className="h-4 w-4 mr-1" />
+                          {experience.period} · {experience.duration}
+                        </div>
+                        <div className="flex items-center">
+                          <MapPin className="h-4 w-4 mr-1" />
+                          {experience.location}
+                        </div>
+                        <Badge variant="secondary" className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 transition-colors duration-200">
+                          {experience.type}
+                        </Badge>
+                        {experience.workType && (
+                          <Badge variant="outline" className="border-blue-200 dark:border-blue-700 text-blue-600 dark:text-blue-400 transition-colors duration-200">
+                            {experience.workType}
+                          </Badge>
+                        )}
                       </div>
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        {experience.location}
-                      </div>
-                      <Badge variant="secondary" className="bg-green-100 text-green-700">
-                        {experience.type}
-                      </Badge>
                     </div>
                   </div>
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent className="p-6">
-              <p className="text-slate-600 mb-6">{experience.description}</p>
-              
-              {/* Key Achievements */}
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-4">Key Achievements</h3>
-                <div className="space-y-3">
-                  {experience.achievements.map((achievement, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                      <p className="text-slate-600 text-sm">{achievement}</p>
-                    </div>
-                  ))}
+              </CardHeader>
+              <CardContent className="p-6">
+                <p className="text-slate-600 dark:text-slate-300 mb-6 transition-colors duration-200">{experience.description}</p>
+                
+                {/* Key Achievements */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 transition-colors duration-200">Key Achievements</h3>
+                  <div className="space-y-3">
+                    {experience.achievements.map((achievement, achievementIndex) => (
+                      <div key={achievementIndex} className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
+                        <p className="text-slate-600 dark:text-slate-300 text-sm transition-colors duration-200">{achievement}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* Technologies Used */}
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-4">Technologies & Tools</h3>
-                <div className="flex flex-wrap gap-2">
-                  {experience.technologies.map((tech, index) => (
-                    <Badge key={index} variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-                      {tech}
-                    </Badge>
-                  ))}
+                {/* Technologies Used */}
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 transition-colors duration-200">Technologies & Tools</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {experience.technologies.map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="outline" className="bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 transition-colors duration-200">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Responsibilities */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Key Responsibilities</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center transition-colors duration-200">Key Responsibilities</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {responsibilities.map((responsibility, index) => (
-              <Card key={index} className="border-slate-200 hover:shadow-lg transition-shadow">
+              <Card key={index} className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:shadow-lg transition-shadow transition-colors duration-200">
                 <CardHeader>
-                  <CardTitle className="text-xl text-slate-900">{responsibility.title}</CardTitle>
-                  <p className="text-slate-600">{responsibility.description}</p>
+                  <CardTitle className="text-xl text-slate-900 dark:text-white transition-colors duration-200">{responsibility.title}</CardTitle>
+                  <p className="text-slate-600 dark:text-slate-300 transition-colors duration-200">{responsibility.description}</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     {responsibility.tasks.map((task, taskIndex) => (
                       <li key={taskIndex} className="flex items-start space-x-2">
-                        <ArrowRight className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-slate-600">{task}</span>
+                        <ArrowRight className="h-4 w-4 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">{task}</span>
                       </li>
                     ))}
                   </ul>
@@ -160,17 +204,17 @@ const Experience = () => {
 
         {/* Education */}
         <div>
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Education</h2>
-          <Card className="border-slate-200 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center transition-colors duration-200">Education</h2>
+          <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 max-w-4xl mx-auto transition-colors duration-200">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <div className="w-16 h-16 bg-slate-600 rounded-lg flex items-center justify-center text-white">
+                <div className="w-16 h-16 bg-slate-600 dark:bg-slate-500 rounded-lg flex items-center justify-center text-white">
                   <BookOpen className="h-8 w-8" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{education.degree}</h3>
-                  <p className="text-lg text-blue-600 mb-2">{education.institution}</p>
-                  <div className="flex flex-wrap gap-4 mb-3 text-sm text-slate-600">
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-200">{education.degree}</h3>
+                  <p className="text-lg text-blue-600 dark:text-blue-400 mb-2 transition-colors duration-200">{education.institution}</p>
+                  <div className="flex flex-wrap gap-4 mb-3 text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">
                     <div className="flex items-center">
                       <Calendar className="h-4 w-4 mr-1" />
                       {education.period}
@@ -180,7 +224,7 @@ const Experience = () => {
                       {education.location}
                     </div>
                   </div>
-                  <p className="text-slate-600">{education.description}</p>
+                  <p className="text-slate-600 dark:text-slate-300 transition-colors duration-200">{education.description}</p>
                 </div>
               </div>
             </CardContent>
