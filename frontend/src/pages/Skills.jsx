@@ -100,16 +100,15 @@ const Skills = () => {
             A comprehensive overview of my technical skills, frameworks, and tools I use to build robust backend systems and intelligent solutions.
           </p>
           
-          {/* Gamified Skills Overview Stats */}
+          {/* Skills Overview Stats */}
           <div className="flex justify-center mt-10">
-            <div className="grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-3 gap-8">
               <div className="text-center group cursor-pointer">
                 <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
                   <Trophy className="h-8 w-8" />
                 </div>
                 <div className="text-3xl font-bold text-slate-900 dark:text-white">{expertSkills}</div>
                 <div className="text-sm text-slate-600 dark:text-slate-300">Expert Level</div>
-                <div className="text-xs text-green-600 dark:text-green-400 mt-1">🏆 Mastered</div>
               </div>
               <div className="text-center group cursor-pointer">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
@@ -117,46 +116,13 @@ const Skills = () => {
                 </div>
                 <div className="text-3xl font-bold text-slate-900 dark:text-white">{advancedSkills}</div>
                 <div className="text-sm text-slate-600 dark:text-slate-300">Advanced Level</div>
-                <div className="text-xs text-blue-600 dark:text-blue-400 mt-1">⭐ Advanced</div>
               </div>
               <div className="text-center group cursor-pointer">
                 <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
-                  <Sparkles className="h-8 w-8" />
+                  <BookOpen className="h-8 w-8" />
                 </div>
-                <div className="text-3xl font-bold text-slate-900 dark:text-white">{skillsUnlocked}</div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Skills Unlocked</div>
-                <div className="text-xs text-purple-600 dark:text-purple-400 mt-1">✨ Unlocked</div>
-              </div>
-              <div className="text-center group cursor-pointer">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
-                  <Award className="h-8 w-8" />
-                </div>
-                <div className="text-3xl font-bold text-slate-900 dark:text-white">{totalXP}</div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Total XP</div>
-                <div className="text-xs text-orange-600 dark:text-orange-400 mt-1">⚡ Experience</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Overall Progress Bar */}
-          <div className="mt-8 max-w-md mx-auto">
-            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                  Skills Mastery Progress
-                </span>
-                <span className="text-sm text-blue-600 dark:text-blue-400 font-semibold">
-                  {Math.round((expertSkills + advancedSkills) / totalSkills * 100)}%
-                </span>
-              </div>
-              <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-3">
-                <div 
-                  className="bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 h-3 rounded-full transition-all duration-1000 ease-out"
-                  style={{ width: `${Math.round((expertSkills + advancedSkills) / totalSkills * 100)}%` }}
-                ></div>
-              </div>
-              <div className="text-xs text-slate-500 dark:text-slate-400 mt-2 text-center">
-                Keep exploring to unlock more achievements! 🚀
+                <div className="text-3xl font-bold text-slate-900 dark:text-white">{totalSkills}</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">Total Skills</div>
               </div>
             </div>
           </div>
