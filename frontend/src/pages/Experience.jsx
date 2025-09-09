@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
-import { Building, Calendar, MapPin, CheckCircle, ArrowRight, BookOpen } from "lucide-react";
+import { Building, Calendar, MapPin, CheckCircle, ArrowRight, BookOpen, Trophy, Star, Target } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
