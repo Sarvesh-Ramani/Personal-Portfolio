@@ -43,7 +43,7 @@ const Home = () => {
                 <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
                   Backend Developer
                 </Badge>
-                <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight">
+                <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 dark:text-white leading-tight transition-colors duration-200">
                   Hi, I'm{" "}
                   <span className="text-blue-600">Sarvesh Ramani</span>
                 </h1>
