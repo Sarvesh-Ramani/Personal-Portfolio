@@ -159,42 +159,16 @@ const Skills = () => {
                             <h3 className="font-semibold text-slate-900 dark:text-white text-lg transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                               {skill.name}
                             </h3>
-                            <div className={`flex items-center space-x-1 px-2 py-1 rounded-full text-white text-xs ${levelBadge.color} group-hover:scale-105 transition-transform duration-300`}>
-                              {levelBadge.icon}
-                              <span>{levelBadge.label}</span>
-                            </div>
                             {skill.level >= 90 && (
                               <div className="animate-bounce">
                                 <Trophy className="h-4 w-4 text-yellow-500" />
                               </div>
                             )}
                           </div>
-                          <div className="flex items-center space-x-2">
-                            <span className="text-sm text-blue-600 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors duration-300">
-                              {skill.level}%
-                            </span>
-                            <div className="text-xs text-slate-400">
-                              +{skill.level} XP
-                            </div>
-                          </div>
                         </div>
                         <div className="relative">
                           <Progress value={skill.level} className="h-3" />
                           <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-20 rounded-full transition-opacity duration-300"></div>
-                          {/* Skill level milestones */}
-                          <div className="absolute top-0 left-0 w-full h-3 flex items-center">
-                            {[25, 50, 75, 90].map(milestone => (
-                              <div 
-                                key={milestone}
-                                className={`absolute w-1 h-5 -top-1 transition-all duration-300 ${
-                                  skill.level >= milestone 
-                                    ? 'bg-yellow-400 shadow-sm' 
-                                    : 'bg-slate-300 dark:bg-slate-600'
-                                }`}
-                                style={{ left: `${milestone}%` }}
-                              ></div>
-                            ))}
-                          </div>
                         </div>
                         <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">
                           {skill.description}
@@ -205,21 +179,10 @@ const Skills = () => {
                           <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg border border-blue-200 dark:border-blue-700 animate-in slide-in-from-top duration-300">
                             <div className="flex items-center space-x-2 mb-2">
                               <Sparkles className="h-4 w-4 text-blue-500" />
-                              <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">Mastery Details</span>
+                              <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">Skill Details</span>
                             </div>
-                            <div className="grid grid-cols-2 gap-4 text-xs">
-                              <div>
-                                <span className="text-slate-500 dark:text-slate-400">Years of Experience:</span>
-                                <span className="ml-2 font-semibold text-slate-700 dark:text-slate-300">
-                                  {skill.level >= 90 ? '3+' : skill.level >= 80 ? '2-3' : skill.level >= 70 ? '1-2' : '<1'}
-                                </span>
-                              </div>
-                              <div>
-                                <span className="text-slate-500 dark:text-slate-400">Projects Used:</span>
-                                <span className="ml-2 font-semibold text-slate-700 dark:text-slate-300">
-                                  {skill.level >= 90 ? '10+' : skill.level >= 80 ? '5-10' : skill.level >= 70 ? '3-5' : '1-3'}
-                                </span>
-                              </div>
+                            <div className="text-sm text-slate-600 dark:text-slate-300">
+                              Click to explore more about this skill and how I've applied it in real projects.
                             </div>
                           </div>
                         )}
