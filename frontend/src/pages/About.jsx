@@ -50,6 +50,33 @@ const About = () => {
             A passionate software engineer with a unique journey from mechanical engineering to backend development, 
             driven by curiosity and a love for solving complex problems through elegant code.
           </p>
+
+          {/* Achievement Milestones */}
+          <div className="flex justify-center mt-10">
+            <div className="grid grid-cols-3 gap-8">
+              <div className="text-center group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                  <Trophy className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-slate-900 dark:text-white">4+</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">Awards & Recognition</div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                  <Star className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-slate-900 dark:text-white">2+</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">Years Experience</div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                  <Sparkles className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-slate-900 dark:text-white">3</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">Career Transitions</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-20">
