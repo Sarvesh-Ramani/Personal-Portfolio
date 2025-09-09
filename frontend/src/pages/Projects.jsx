@@ -123,16 +123,15 @@ const Projects = () => {
             demonstrating expertise across diverse domains.
           </p>
 
-          {/* Gamified Project Stats */}
+          {/* Project Stats */}
           <div className="flex justify-center mt-10">
-            <div className="grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-3 gap-8">
               <div className="text-center group cursor-pointer">
                 <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
                   <Trophy className="h-8 w-8" />
                 </div>
                 <div className="text-3xl font-bold text-slate-900 dark:text-white">{featuredProjects.length}</div>
                 <div className="text-sm text-slate-600 dark:text-slate-300">Featured Projects</div>
-                <div className="text-xs text-green-600 dark:text-green-400 mt-1">🏆 Showcased</div>
               </div>
               <div className="text-center group cursor-pointer">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
@@ -140,7 +139,6 @@ const Projects = () => {
                 </div>
                 <div className="text-3xl font-bold text-slate-900 dark:text-white">{projectsCompleted}</div>
                 <div className="text-sm text-slate-600 dark:text-slate-300">Completed</div>
-                <div className="text-xs text-blue-600 dark:text-blue-400 mt-1">✅ Delivered</div>
               </div>
               <div className="text-center group cursor-pointer">
                 <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
@@ -148,38 +146,6 @@ const Projects = () => {
                 </div>
                 <div className="text-3xl font-bold text-slate-900 dark:text-white">{allProjects.filter(p => p.status !== 'Completed').length}</div>
                 <div className="text-sm text-slate-600 dark:text-slate-300">In Development</div>
-                <div className="text-xs text-purple-600 dark:text-purple-400 mt-1">🚀 Building</div>
-              </div>
-              <div className="text-center group cursor-pointer">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
-                  <Sparkles className="h-8 w-8" />
-                </div>
-                <div className="text-3xl font-bold text-slate-900 dark:text-white">{totalImpact}</div>
-                <div className="text-sm text-slate-600 dark:text-slate-300">Impact Score</div>
-                <div className="text-xs text-orange-600 dark:text-orange-400 mt-1">⚡ Value</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Project Progress */}
-          <div className="mt-8 max-w-md mx-auto">
-            <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                  Project Portfolio Progress
-                </span>
-                <span className="text-sm text-blue-600 dark:text-blue-400 font-semibold">
-                  {Math.round(projectsCompleted / allProjects.length * 100) || 0}%
-                </span>
-              </div>
-              <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-3">
-                <div 
-                  className="bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 h-3 rounded-full transition-all duration-1000 ease-out"
-                  style={{ width: `${Math.round(projectsCompleted / allProjects.length * 100) || 0}%` }}
-                ></div>
-              </div>
-              <div className="text-xs text-slate-500 dark:text-slate-400 mt-2 text-center">
-                Building the future, one project at a time 🚀
               </div>
             </div>
           </div>
