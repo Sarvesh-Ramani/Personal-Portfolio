@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { personalInfo, skills, projects } from '../mock.js';
+import { personalInfo, skills, projects, experience, education, achievements } from '../mock.js';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
