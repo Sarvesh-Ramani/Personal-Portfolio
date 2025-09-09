@@ -44,11 +44,23 @@ if (api) {
 // Personal Information API
 export const personalInfoApi = {
   get: async () => {
+    if (isProductionFrontendOnly) {
+      // Return mock data for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(personalInfo), 100); // Simulate API delay
+      });
+    }
     const response = await api.get('/personal-info');
     return response.data;
   },
   
   update: async (data) => {
+    if (isProductionFrontendOnly) {
+      // Return updated mock data for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ ...personalInfo, ...data }), 100);
+      });
+    }
     const response = await api.put('/personal-info', data);
     return response.data;
   }
