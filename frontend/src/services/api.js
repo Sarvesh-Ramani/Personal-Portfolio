@@ -92,26 +92,56 @@ export const experienceApi = {
 // Projects API
 export const projectsApi = {
   getAll: async () => {
+    if (isProductionFrontendOnly) {
+      // Return all mock projects for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve([...projects.featured, ...projects.upcoming]), 150);
+      });
+    }
     const response = await api.get('/projects');
     return response.data;
   },
   
   getFeatured: async () => {
+    if (isProductionFrontendOnly) {
+      // Return featured mock projects for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(projects.featured), 120);
+      });
+    }
     const response = await api.get('/projects/featured');
     return response.data;
   },
   
   create: async (data) => {
+    if (isProductionFrontendOnly) {
+      // Return created project for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ id: Date.now(), ...data }), 200);
+      });
+    }
     const response = await api.post('/projects', data);
     return response.data;
   },
   
   update: async (id, data) => {
+    if (isProductionFrontendOnly) {
+      // Return updated project for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ id, ...data }), 180);
+      });
+    }
     const response = await api.put(`/projects/${id}`, data);
     return response.data;
   },
   
   delete: async (id) => {
+    if (isProductionFrontendOnly) {
+      // Return success for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ success: true, id }), 150);
+      });
+    }
     const response = await api.delete(`/projects/${id}`);
     return response.data;
   }
