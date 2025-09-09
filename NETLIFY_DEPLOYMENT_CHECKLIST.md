@@ -76,13 +76,17 @@ REACT_APP_BACKEND_URL=https://your-railway-backend-url
 
 ✅ **netlify.toml**: 
 ```toml
+[build]
+  command = "npm install --legacy-peer-deps && npm run build"
 [build.environment]
-  NODE_VERSION = "20"  # Updated from 18
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
 ```
 
 ✅ **/.nvmrc**: `20`
 ✅ **/frontend/.nvmrc**: `20`  
-✅ **package.json engines**: `"node": ">=20.0.0"`
+✅ **/frontend/.npmrc**: `legacy-peer-deps=true`
+✅ **package.json**: `"date-fns": "^3.6.0"` (downgraded from v4)
 
 ## 🎯 Expected Result:
 - ✅ Build succeeds on Netlify
