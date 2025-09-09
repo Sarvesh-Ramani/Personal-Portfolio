@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
-import { ExternalLink, Github, Code, Brain, Shield, Plus, Trophy, Star, Target, Zap } from "lucide-react";
-import { projects } from "../mock";
+import { ExternalLink, Github, Code, Brain, Shield, Plus, Trophy, Star, Target, Zap, Award, Sparkles, Clock, Users } from "lucide-react";
+import { projectsApi } from "../services/api";
 import { LoadingPage } from "../components/LoadingSpinner";
 
 const Projects = () => {
