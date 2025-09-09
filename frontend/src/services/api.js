@@ -3,12 +3,11 @@ import { personalInfo, skills, projects, experience, education, achievements } f
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
-// Check if we're in a frontend-only deployment (Netlify or empty backend URL)
-const isProductionFrontendOnly = process.env.NODE_ENV === 'production' && (!BACKEND_URL || 
+// Always use frontend-only mode in production if no valid backend URL
+const isProductionFrontendOnly = !BACKEND_URL || 
   BACKEND_URL.trim() === '' || 
   BACKEND_URL === 'undefined' || 
-  BACKEND_URL === 'null') ||
-  (typeof window !== 'undefined' && window.location.hostname.includes('netlify'));
+  !BACKEND_URL.startsWith('http');
 
 const API_BASE = isProductionFrontendOnly ? null : `${BACKEND_URL}/api`;
 
