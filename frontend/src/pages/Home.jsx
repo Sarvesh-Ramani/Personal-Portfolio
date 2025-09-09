@@ -104,7 +104,7 @@ const Home = () => {
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4 transition-colors duration-200">
               What I Bring to the Table
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto transition-colors duration-200">
               Combining technical expertise with problem-solving skills to deliver enterprise-grade solutions
             </p>
           </div>
