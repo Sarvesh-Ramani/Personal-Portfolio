@@ -240,8 +240,7 @@ export const skillsApi = {
 export const educationApi = {
   getAll: async () => {
     if (isProductionFrontendOnly) {
-      // Import education data from mock.js for frontend-only deployment
-      const { education } = await import('../mock.js');
+      // Return mock education data for frontend-only deployment
       return new Promise((resolve) => {
         setTimeout(() => resolve([education]), 110); // Wrap in array to match API format
       });
