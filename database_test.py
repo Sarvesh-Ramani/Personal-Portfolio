@@ -7,7 +7,7 @@ import asyncio
 import aiohttp
 import json
 
-BACKEND_URL = "https://java-developer.preview.emergentagent.com/api"
+BACKEND_URL = "https://modern-dev-cv.preview.emergentagent.com/api"
 
 async def test_data_integrity():
     """Test data integrity and relationships"""

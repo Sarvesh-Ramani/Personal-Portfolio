@@ -13,7 +13,7 @@ from typing import Dict, List, Any
 from datetime import datetime
 
 # Get backend URL from environment
-BACKEND_URL = "https://java-developer.preview.emergentagent.com/api"
+BACKEND_URL = "https://modern-dev-cv.preview.emergentagent.com/api"
 
 class PortfolioAPITester:
     def __init__(self):
