@@ -47,7 +47,7 @@ const Home = () => {
                   Hi, I'm{" "}
                   <span className="text-blue-600">Sarvesh Ramani</span>
                 </h1>
-                <p className="text-xl text-slate-600 max-w-2xl">
+                <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl transition-colors duration-200">
                   Backend Developer with 1.5+ years of experience designing scalable microservices and exploring AI/ML applications. 
                   Passionate about creating enterprise-level solutions that drive business value.
                 </p>
