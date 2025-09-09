@@ -134,11 +134,6 @@ const Skills = () => {
                             <h3 className="font-semibold text-slate-900 dark:text-white text-lg transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">
                               {skill.name}
                             </h3>
-                            {skill.level >= 90 && (
-                              <div className="animate-bounce">
-                                <Trophy className="h-4 w-4 text-yellow-500" />
-                              </div>
-                            )}
                           </div>
                         </div>
                         <div className="relative">
