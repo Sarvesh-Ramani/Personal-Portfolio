@@ -231,21 +231,46 @@ export const skillsApi = {
 // Education API
 export const educationApi = {
   getAll: async () => {
+    if (isProductionFrontendOnly) {
+      // Import education data from mock.js for frontend-only deployment
+      const { education } = await import('../mock.js');
+      return new Promise((resolve) => {
+        setTimeout(() => resolve([education]), 110); // Wrap in array to match API format
+      });
+    }
     const response = await api.get('/education');
     return response.data;
   },
   
   create: async (data) => {
+    if (isProductionFrontendOnly) {
+      // Return created education for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ id: Date.now(), ...data }), 200);
+      });
+    }
     const response = await api.post('/education', data);
     return response.data;
   },
   
   update: async (id, data) => {
+    if (isProductionFrontendOnly) {
+      // Return updated education for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ id, ...data }), 180);
+      });
+    }
     const response = await api.put(`/education/${id}`, data);
     return response.data;
   },
   
   delete: async (id) => {
+    if (isProductionFrontendOnly) {
+      // Return success for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ success: true, id }), 150);
+      });
+    }
     const response = await api.delete(`/education/${id}`);
     return response.data;
   }
