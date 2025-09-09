@@ -1,15 +1,11 @@
 import axios from 'axios';
 import { personalInfo, skills, projects, experience, education, achievements } from '../mock.js';
 
+// Force frontend-only mode for production builds or when no backend URL is provided
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const isProductionFrontendOnly = true; // Force frontend-only mode for Netlify deployment
 
-// Always use frontend-only mode in production if no valid backend URL
-const isProductionFrontendOnly = !BACKEND_URL || 
-  BACKEND_URL.trim() === '' || 
-  BACKEND_URL === 'undefined' || 
-  !BACKEND_URL.startsWith('http');
-
-const API_BASE = isProductionFrontendOnly ? null : `${BACKEND_URL}/api`;
+const API_BASE = null; // No backend API base for frontend-only deployment
 
 
 
