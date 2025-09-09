@@ -504,10 +504,10 @@ class PortfolioAPITester:
             async with self.session.get(f"{BACKEND_URL}/") as response:
                 headers = response.headers
                 
-                # Check for CORS headers
-                cors_headers_present = (
-                    'access-control-allow-origin' in headers or
-                    'Access-Control-Allow-Origin' in headers
+                # Check for CORS headers (case insensitive)
+                cors_headers_present = any(
+                    'access-control-allow-origin' in header.lower() 
+                    for header in headers.keys()
                 )
                 
                 if cors_headers_present:
