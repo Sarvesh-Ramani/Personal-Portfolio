@@ -31,93 +31,40 @@ A modern, full-stack portfolio website showcasing my journey as a Software Engin
 - Netlify (Alternative frontend hosting)
 - Railway/Render (Backend hosting)
 
-## 🚀 Quick Start
+## 🚀 Quick Deploy (Fixed Netlify Issues)
 
-### Prerequisites
-- Node.js 18+
-- Python 3.9+
-- MongoDB (local or cloud)
+### Netlify Deployment (RECOMMENDED)
 
-### Local Development
+**Issues Fixed:**
+- ✅ Path configuration (`frontend/frontend/build` → `build`)
+- ✅ Build command updated with dependency installation  
+- ✅ Node.js version specified (18+)
+- ✅ Added redundant redirect files
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/sarveshramani/portfolio.git
-   cd portfolio
-   ```
+**Step 1: Deploy Backend**
+Choose Railway, Render, or Heroku:
 
-2. **Install dependencies**
-   ```bash
-   npm run install:all
-   ```
+**Railway (Easiest):**
+1. Go to [Railway.app](https://railway.app)
+2. Connect GitHub repo → Deploy
+3. Set environment variables:
+   - `MONGO_URL=mongodb+srv://...` (your MongoDB Atlas URL)
+   - `DB_NAME=portfolio_db`
+4. Note your backend URL
 
-3. **Set up environment variables**
-   ```bash
-   # Backend
-   cp .env.example backend/.env
-   
-   # Frontend
-   cp frontend/.env.example frontend/.env
-   ```
+**Step 2: Deploy Frontend to Netlify**
+1. Go to [Netlify.com](https://netlify.com) → New site from Git
+2. Connect GitHub repository
+3. **IMPORTANT**: Set environment variable in Netlify:
+   - `REACT_APP_BACKEND_URL=https://your-railway-backend-url`
+4. Deploy (will auto-use netlify.toml config)
 
-4. **Start MongoDB** (if running locally)
-   ```bash
-   mongod
-   ```
-
-5. **Seed the database**
-   ```bash
-   npm run seed
-   ```
-
-6. **Start development servers**
-   ```bash
-   npm run dev
-   ```
-
-   This starts both frontend (http://localhost:3000) and backend (http://localhost:8001)
-
-## 📦 Deployment Options
-
-### Option 1: Vercel (Recommended for Full-Stack)
-
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
-
-2. **Deploy to Vercel**
-   - Connect your GitHub repo to Vercel
-   - Set environment variables in Vercel dashboard:
-     - `MONGO_URL`: Your MongoDB connection string
-     - `DB_NAME`: Your database name
-   - Deploy automatically
-
-### Option 2: Netlify (Frontend) + Railway (Backend)
-
-1. **Deploy Frontend to Netlify**
-   - Connect GitHub repo to Netlify
-   - Set build command: `npm run build`
-   - Set publish directory: `frontend/build`
-   - Update `REACT_APP_BACKEND_URL` to your backend URL
-
-2. **Deploy Backend to Railway**
-   - Connect GitHub repo to Railway
-   - Set environment variables
-   - Railway will auto-deploy your FastAPI backend
-
-### Option 3: Docker Deployment
-
-1. **Build and run with Docker Compose**
-   ```bash
-   docker-compose up --build
-   ```
-
-2. **Access the application**
-   - Frontend: http://localhost:3000
-   - Backend: http://localhost:8001
+### Alternative: Vercel (Full-Stack)
+1. Push to GitHub → Connect to Vercel
+2. Set environment variables:
+   - `MONGO_URL=mongodb+srv://...`
+   - `DB_NAME=portfolio_db`
+3. Deploy automatically ✨
 
 ## 🔧 Configuration
 
