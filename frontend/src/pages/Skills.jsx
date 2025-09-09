@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Progress } from "../components/ui/progress";
 import { Badge } from "../components/ui/badge";
-import { Code, Database, Cloud, Wrench, BookOpen, Trophy, Star, Zap, Target } from "lucide-react";
-import { skills } from "../mock";
+import { Code, Database, Cloud, Wrench, BookOpen, Trophy, Star, Zap, Target, Award, Sparkles, Users, Clock } from "lucide-react";
+import { skillsApi } from "../services/api";
 import { LoadingPage } from "../components/LoadingSpinner";
 
 const Skills = () => {
