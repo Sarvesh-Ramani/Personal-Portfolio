@@ -252,6 +252,12 @@ export const achievementsApi = {
 // Test API connection
 export const testApi = {
   health: async () => {
+    if (isProductionFrontendOnly) {
+      // Return mock health status for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ message: 'Portfolio Frontend is running!', mode: 'frontend-only' }), 50);
+      });
+    }
     const response = await api.get('/');
     return response.data;
   }
