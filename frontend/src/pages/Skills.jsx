@@ -58,10 +58,12 @@ const Skills = () => {
   };
 
   const certifications = [
-    "Spring Boot Certified Developer",
-    "MongoDB Certified Developer",
-    "Docker Fundamentals",
-    "Kubernetes Basics"
+    "AWS Educate Machine Learning Foundations",
+    "Introducing Generative AI with AWS",
+    "ML Research Intern Certification",
+    "Astronomical Data Science",
+    "Python Data Structures",
+    "Ethical Hacking & Cyber Security"
   ];
 
   if (loading) {
@@ -70,7 +72,7 @@ const Skills = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center transition-colors duration-200">
+      <div className="min-h-screen bg-white dark:bg-slate-900 flex items-center justify-center transition-colors duration-300">
         <ErrorMessage 
           title="Failed to load skills"
           message={error}
@@ -81,40 +83,40 @@ const Skills = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-16 transition-colors duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white dark:bg-slate-900 py-16 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6 transition-colors duration-200">
+        <div className="text-center mb-20">
+          <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 transition-colors duration-300">
             Skills & Expertise
           </h1>
-          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto transition-colors duration-200">
-            A comprehensive overview of my technical skills, frameworks, and tools I work with to build robust backend systems.
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed transition-colors duration-300">
+            A comprehensive overview of my technical skills, frameworks, and tools I use to build robust backend systems and intelligent solutions.
           </p>
         </div>
 
         {/* Skills by Category */}
-        <div className="space-y-12 mb-16">
+        <div className="space-y-16 mb-20">
           {Object.entries(skills).map(([category, categorySkills]) => (
-            <Card key={category} className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-colors duration-200">
+            <Card key={category} className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:shadow-lg transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-2xl text-slate-900 dark:text-white flex items-center transition-colors duration-200">
-                  <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 mr-3">
+                <CardTitle className="text-2xl font-semibold text-slate-900 dark:text-white flex items-center transition-colors duration-300">
+                  <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 mr-4 shadow-sm">
                     {getIconForCategory(category)}
                   </div>
                   {category}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                   {categorySkills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-3">
+                    <div key={skillIndex} className="space-y-4">
                       <div className="flex justify-between items-center">
-                        <h3 className="font-semibold text-slate-900 dark:text-white transition-colors duration-200">{skill.name}</h3>
-                        <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">{skill.level}%</span>
+                        <h3 className="font-semibold text-slate-900 dark:text-white text-lg transition-colors duration-300">{skill.name}</h3>
+                        <span className="text-sm text-blue-600 dark:text-blue-400 font-medium bg-blue-50 dark:bg-blue-900/30 px-2 py-1 rounded">{skill.level}%</span>
                       </div>
-                      <Progress value={skill.level} className="h-2" />
-                      <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">{skill.description}</p>
+                      <Progress value={skill.level} className="h-3" />
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">{skill.description}</p>
                     </div>
                   ))}
                 </div>
@@ -124,40 +126,40 @@ const Skills = () => {
         </div>
 
         {/* Technical Proficiencies */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           {/* What I Excel At */}
-          <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-colors duration-200">
+          <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:shadow-lg transition-all duration-300">
             <CardHeader>
-              <CardTitle className="text-2xl text-slate-900 dark:text-white transition-colors duration-200">What I Excel At</CardTitle>
+              <CardTitle className="text-2xl font-semibold text-slate-900 dark:text-white transition-colors duration-300">What I Excel At</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-3">
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></div>
+            <CardContent className="space-y-6">
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white transition-colors duration-200">Backend Architecture</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">Designing scalable microservices with proper separation of concerns</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">Backend Architecture</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">Designing scalable microservices with proper separation of concerns and enterprise-grade patterns</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white transition-colors duration-200">API Development</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">Creating secure, well-documented REST APIs with proper error handling</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">API Development</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">Creating secure, well-documented REST APIs with comprehensive error handling and validation</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white transition-colors duration-200">Problem Solving</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">Debugging complex issues and implementing robust solutions</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">AI/ML Research</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">Developing deep learning models and conducting research in astronomical data science</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full mt-2"></div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white transition-colors duration-200">Performance Optimization</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">Optimizing database queries and improving system performance</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">Performance Optimization</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">Optimizing database queries and improving system performance through data-driven approaches</p>
                   </div>
                 </div>
               </div>
@@ -165,38 +167,38 @@ const Skills = () => {
           </Card>
 
           {/* Currently Learning */}
-          <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-colors duration-200">
+          <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:shadow-lg transition-all duration-300">
             <CardHeader>
-              <CardTitle className="text-2xl text-slate-900 dark:text-white transition-colors duration-200">Currently Exploring</CardTitle>
+              <CardTitle className="text-2xl font-semibold text-slate-900 dark:text-white transition-colors duration-300">Currently Exploring</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-3">
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full mt-2"></div>
+            <CardContent className="space-y-6">
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-green-600 dark:bg-green-400 rounded-full mt-2"></div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white transition-colors duration-200">Advanced AI/ML</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">Deep learning with TensorFlow and neural network architectures</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">Advanced AI/ML</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">Exploring generative AI, transformer architectures, and advanced neural network patterns</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full mt-2"></div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-green-600 dark:bg-green-400 rounded-full mt-2"></div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white transition-colors duration-200">Cloud Technologies</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">AWS services and cloud-native application development</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">Cloud Technologies</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">AWS services, cloud-native development, and serverless architecture patterns</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full mt-2"></div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-green-600 dark:bg-green-400 rounded-full mt-2"></div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white transition-colors duration-200">Event-Driven Architecture</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">Implementing messaging patterns and event sourcing</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">Event-Driven Architecture</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">Implementing messaging patterns, event sourcing, and distributed system design</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full mt-2"></div>
+                <div className="flex items-start space-x-4">
+                  <div className="w-3 h-3 bg-green-600 dark:bg-green-400 rounded-full mt-2"></div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white transition-colors duration-200">GraphQL</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">Modern API development with GraphQL and Apollo</p>
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-2 transition-colors duration-300">GraphQL & Modern APIs</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed transition-colors duration-300">Next-generation API development with GraphQL and modern data fetching patterns</p>
                   </div>
                 </div>
               </div>
@@ -205,21 +207,21 @@ const Skills = () => {
         </div>
 
         {/* Certifications */}
-        <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-colors duration-200">
+        <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:shadow-lg transition-all duration-300">
           <CardHeader>
-            <CardTitle className="text-2xl text-slate-900 dark:text-white transition-colors duration-200">Certifications & Learning</CardTitle>
+            <CardTitle className="text-2xl font-semibold text-slate-900 dark:text-white transition-colors duration-300">Certifications & Learning</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {certifications.map((cert, index) => (
-                <Badge key={index} variant="outline" className="p-3 text-center justify-center bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-200">
+                <Badge key={index} variant="outline" className="p-4 text-center justify-center bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-all duration-300 text-sm">
                   {cert}
                 </Badge>
               ))}
             </div>
-            <div className="mt-6 p-4 bg-slate-100 dark:bg-slate-700 rounded-lg transition-colors duration-200">
-              <p className="text-sm text-slate-600 dark:text-slate-300 text-center transition-colors duration-200">
-                <strong>Note:</strong> Continuously learning and staying updated with the latest technologies and best practices in backend development.
+            <div className="mt-8 p-6 bg-slate-50 dark:bg-slate-700 rounded-xl transition-colors duration-300">
+              <p className="text-sm text-slate-600 dark:text-slate-300 text-center leading-relaxed transition-colors duration-300">
+                <strong className="text-slate-900 dark:text-white">Continuous Learning:</strong> Staying updated with the latest technologies, frameworks, and best practices in software development, AI/ML, and enterprise architecture.
               </p>
             </div>
           </CardContent>
