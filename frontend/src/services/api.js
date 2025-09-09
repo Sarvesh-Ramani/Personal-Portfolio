@@ -4,8 +4,8 @@ import { personalInfo, skills, projects } from '../mock.js';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API_BASE = `${BACKEND_URL}/api`;
 
-// Check if we're in a frontend-only deployment (Netlify)
-const isProductionFrontendOnly = !BACKEND_URL || BACKEND_URL.includes('netlify');
+// Check if we're in a frontend-only deployment (Netlify or empty backend URL)
+const isProductionFrontendOnly = !BACKEND_URL || BACKEND_URL.trim() === '';
 
 // Create axios instance with default config (only if backend is available)
 const api = !isProductionFrontendOnly ? axios.create({
