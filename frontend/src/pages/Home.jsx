@@ -53,11 +53,15 @@ const Home = () => {
       setPersonalInfo(personalData);
       setFeaturedProjects(projectsData);
       
-      // Extract unique tech stack from skills
-      const programmingSkills = skillsData
-        .filter(skill => ['Programming Languages', 'Frameworks & Technologies', 'Databases', 'DevOps & Tools'].includes(skill.category))
-        .map(skill => skill.name);
-      setTechStack(programmingSkills.slice(0, 8)); // Limit to 8 items
+      // Extract tech stack prioritizing work technologies first
+      const workTechnologies = ["Java", "Spring Boot", "MongoDB", "Docker", "Kubernetes", "Git"];
+      const personalTechnologies = skillsData
+        .filter(skill => ['Programming Languages', 'Frameworks & Technologies'].includes(skill.category))
+        .map(skill => skill.name)
+        .filter(tech => ["Python", "TensorFlow", "Scikit-learn"].includes(tech));
+      
+      const combinedTechStack = [...workTechnologies, ...personalTechnologies];
+      setTechStack(combinedTechStack.slice(0, 10)); // Allow up to 10 items
       
     } catch (err) {
       console.error('Error fetching home page data:', err);
