@@ -79,8 +79,7 @@ export const personalInfoApi = {
 export const experienceApi = {
   getAll: async () => {
     if (isProductionFrontendOnly) {
-      // Import experience data from mock.js for frontend-only deployment
-      const { experience } = await import('../mock.js');
+      // Return mock experience data for frontend-only deployment
       return new Promise((resolve) => {
         setTimeout(() => resolve(experience), 120);
       });
