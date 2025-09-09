@@ -69,21 +69,46 @@ export const personalInfoApi = {
 // Experience API
 export const experienceApi = {
   getAll: async () => {
+    if (isProductionFrontendOnly) {
+      // Import experience data from mock.js for frontend-only deployment
+      const { experience } = await import('../mock.js');
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(experience), 120);
+      });
+    }
     const response = await api.get('/experience');
     return response.data;
   },
   
   create: async (data) => {
+    if (isProductionFrontendOnly) {
+      // Return created experience for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ id: Date.now(), ...data }), 200);
+      });
+    }
     const response = await api.post('/experience', data);
     return response.data;
   },
   
   update: async (id, data) => {
+    if (isProductionFrontendOnly) {
+      // Return updated experience for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ id, ...data }), 180);
+      });
+    }
     const response = await api.put(`/experience/${id}`, data);
     return response.data;
   },
   
   delete: async (id) => {
+    if (isProductionFrontendOnly) {
+      // Return success for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ success: true, id }), 150);
+      });
+    }
     const response = await api.delete(`/experience/${id}`);
     return response.data;
   }
