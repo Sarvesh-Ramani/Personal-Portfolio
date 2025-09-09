@@ -70,6 +70,33 @@ const Contact = () => {
             Ready to discuss your next project or explore collaboration opportunities? 
             I'd love to hear from you and see how we can work together to create something amazing.
           </p>
+
+          {/* Contact Stats */}
+          <div className="flex justify-center mt-10">
+            <div className="grid grid-cols-3 gap-8">
+              <div className="text-center group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                  <MessageCircle className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-slate-900 dark:text-white">24h</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">Response Time</div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                  <Users className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-slate-900 dark:text-white">4</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">Contact Methods</div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                  <Zap className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-slate-900 dark:text-white">Open</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">For Opportunities</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
