@@ -71,7 +71,7 @@ const About = () => {
                 <div className="space-y-4 text-sm text-slate-600 dark:text-slate-300 transition-colors duration-300">
                   <div className="flex items-center justify-center">
                     <MapPin className="h-4 w-4 mr-2 text-slate-400 dark:text-slate-500" />
-                    <span>Coimbatore, Tamil Nadu, India</span>
+                    <span>Chennai, Tamil Nadu, India</span>
                   </div>
                   <div className="flex items-center justify-center">
                     <Calendar className="h-4 w-4 mr-2 text-slate-400 dark:text-slate-500" />
