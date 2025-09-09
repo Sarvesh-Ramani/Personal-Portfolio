@@ -8,16 +8,38 @@ import { LoadingPage } from "../components/LoadingSpinner";
 
 const Projects = () => {
   const [featuredProjects, setFeaturedProjects] = useState([]);
-  const [upcomingProjects, setUpcomingProjects] = useState([]);
+  const [allProjects, setAllProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [projectsCompleted, setProjectsCompleted] = useState(0);
+  const [totalImpact, setTotalImpact] = useState(0);
 
   const fetchProjects = async () => {
     try {
       setLoading(true);
-      // Simulate API call delay for smooth UX
-      await new Promise(resolve => setTimeout(resolve, 700));
-      setFeaturedProjects(projects.featured);
-      setUpcomingProjects(projects.upcoming);
+      
+      const [featured, all] = await Promise.all([
+        projectsApi.getFeatured(),
+        projectsApi.getAll()
+      ]);
+      
+      setFeaturedProjects(featured);
+      setAllProjects(all);
+      
+      // Calculate gamification metrics
+      const completed = all.filter(p => p.status === 'Completed').length;
+      const impact = all.reduce((sum, project) => {
+        // Calculate impact score based on project type and technologies
+        let score = 10;
+        if (project.type === 'Enterprise Project') score += 20;
+        if (project.type === 'Research Project') score += 15;
+        if (project.isFeatured) score += 10;
+        return sum + score;
+      }, 0);
+      
+      setProjectsCompleted(completed);
+      setTotalImpact(impact);
+      
     } catch (err) {
       console.error('Error fetching projects:', err);
     } finally {
