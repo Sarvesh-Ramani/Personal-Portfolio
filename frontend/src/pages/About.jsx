@@ -102,7 +102,7 @@ const About = () => {
             </Card>
 
             {/* What I Do */}
-            <Card className="border-slate-200">
+            <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-colors duration-200">
               <CardHeader>
                 <CardTitle className="text-2xl text-slate-900 flex items-center">
                   <Target className="h-6 w-6 mr-2 text-blue-600" />
