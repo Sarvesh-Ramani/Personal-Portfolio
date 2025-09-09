@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
-import { ArrowRight, Code, Database, Cloud, Brain, Trophy, Target, Zap } from "lucide-react";
-import { personalInfo, projects, skills, techStack } from "../mock";
+import { ArrowRight, Code, Database, Cloud, Brain, Trophy, Target, Zap, Star, Award, Sparkles } from "lucide-react";
+import { personalInfoApi, projectsApi, skillsApi } from "../services/api";
+import { techStack } from "../mock";
 import { LoadingPage } from "../components/LoadingSpinner";
 
 const Home = () => {
