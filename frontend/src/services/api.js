@@ -9,14 +9,8 @@ const API_BASE = null; // No backend API base for frontend-only deployment
 
 
 
-// Create axios instance with default config (only if backend is available)
-const api = (!isProductionFrontendOnly && API_BASE) ? axios.create({
-  baseURL: API_BASE,
-  timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-}) : null;
+// No axios instance needed for frontend-only deployment
+const api = null;
 
 // Add request interceptor for logging (only if backend is available)
 if (api) {
