@@ -49,15 +49,6 @@ const Experience = () => {
         "Provide technical guidance and recommendations",
         "Deliver custom solutions tailored to client needs"
       ]
-    },
-    {
-      title: "System Architecture",
-      description: "Contribute to architectural decisions and system design",
-      tasks: [
-        "Design microservices with proper separation of concerns",
-        "Implement security best practices for PKI systems",
-        "Optimize system performance and scalability"
-      ]
     }
   ];
 
