@@ -279,21 +279,46 @@ export const educationApi = {
 // Achievements API
 export const achievementsApi = {
   getAll: async () => {
+    if (isProductionFrontendOnly) {
+      // Import achievements data from mock.js for frontend-only deployment
+      const { achievements } = await import('../mock.js');
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(achievements), 130);
+      });
+    }
     const response = await api.get('/achievements');
     return response.data;
   },
   
   create: async (data) => {
+    if (isProductionFrontendOnly) {
+      // Return created achievement for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ id: Date.now(), ...data }), 200);
+      });
+    }
     const response = await api.post('/achievements', data);
     return response.data;
   },
   
   update: async (id, data) => {
+    if (isProductionFrontendOnly) {
+      // Return updated achievement for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ id, ...data }), 180);
+      });
+    }
     const response = await api.put(`/achievements/${id}`, data);
     return response.data;
   },
   
   delete: async (id) => {
+    if (isProductionFrontendOnly) {
+      // Return success for frontend-only deployment
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ success: true, id }), 150);
+      });
+    }
     const response = await api.delete(`/achievements/${id}`);
     return response.data;
   }
