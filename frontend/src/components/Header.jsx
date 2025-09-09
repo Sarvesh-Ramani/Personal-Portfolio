@@ -53,7 +53,8 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-700 dark:text-slate-300"
+              className="text-slate-700 dark:text-slate-300 p-2"
+              aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
