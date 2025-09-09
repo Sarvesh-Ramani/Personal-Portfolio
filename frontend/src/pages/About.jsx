@@ -79,7 +79,7 @@ const About = () => {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* My Story */}
-            <Card className="border-slate-200">
+            <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-colors duration-200">
               <CardHeader>
                 <CardTitle className="text-2xl text-slate-900">My Story</CardTitle>
               </CardHeader>
