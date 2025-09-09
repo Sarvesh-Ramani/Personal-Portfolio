@@ -172,7 +172,7 @@ const About = () => {
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Achievements & Recognition</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {achievements.map((achievement, index) => (
-              <Card key={index} className="border-slate-200 hover:shadow-lg transition-shadow">
+              <Card key={index} className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-colors duration-200 hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
