@@ -274,14 +274,14 @@ const Projects = () => {
         </div>
 
         {/* Upcoming Projects */}
-        {upcomingProjects.length > 0 && (
+        {allProjects.filter(p => p.status !== 'Completed').length > 0 && (
           <div>
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-12 transition-colors duration-300 flex items-center">
               <Target className="h-8 w-8 text-blue-500 mr-3" />
               Upcoming Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {upcomingProjects.map((project, index) => {
+              {allProjects.filter(p => p.status !== 'Completed').map((project, index) => {
                 const badge = getProjectBadge(project);
                 return (
                   <Card key={index} className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
