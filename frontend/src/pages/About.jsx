@@ -49,7 +49,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
           {/* Profile Image and Basic Info */}
           <div className="lg:col-span-1">
-            <Card className="border-slate-200">
+            <Card className="border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-colors duration-200">
               <CardContent className="p-6 text-center space-y-6">
                 <img
                   src="https://customer-assets.emergentagent.com/job_f1a148eb-73ec-41da-affa-5da4b24be52c/artifacts/utsgf50g_1728362780929.jpg"
