@@ -97,6 +97,33 @@ const Experience = () => {
             My journey in software development, from R&D exploration to Software Engineer II, 
             with expertise spanning backend systems, AI/ML research, and enterprise solutions.
           </p>
+
+          {/* Experience Stats */}
+          <div className="flex justify-center mt-10">
+            <div className="grid grid-cols-3 gap-8">
+              <div className="text-center group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                  <Building className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-slate-900 dark:text-white">3</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">Companies</div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                  <Trophy className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-slate-900 dark:text-white">2+</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">Years Experience</div>
+              </div>
+              <div className="text-center group cursor-pointer">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white mx-auto mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-lg">
+                  <Target className="h-8 w-8" />
+                </div>
+                <div className="text-3xl font-bold text-slate-900 dark:text-white">15+</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">Key Achievements</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Experience Cards */}
