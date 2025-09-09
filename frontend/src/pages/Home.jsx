@@ -280,24 +280,6 @@ const Home = () => {
                   <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed transition-colors duration-300">
                     {highlight.description}
                   </p>
-                  
-                  {/* Interactive Skill Level */}
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-slate-500 dark:text-slate-400">Expertise Level</span>
-                      <span className="text-slate-700 dark:text-slate-300 font-semibold">{highlight.level}%</span>
-                    </div>
-                    <div className="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-2">
-                      <div 
-                        className={`bg-gradient-to-r ${highlight.color} h-2 rounded-full transition-all duration-1000 ease-out group-hover:animate-pulse`}
-                        style={{ width: `${highlight.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                  
-                  <div className="text-sm font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors duration-300">
-                    {highlight.metric}
-                  </div>
                 </CardContent>
                 
                 {/* Hover Effect Background */}
